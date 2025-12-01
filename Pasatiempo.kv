@@ -1,0 +1,54 @@
+#:kivy 2.3.0
+ScreenManager:
+    MainScreen:
+
+<MainScreen>:
+    name: "main"
+
+    FloatLayout:  # Para poder posicionar elementos
+        # Imagen de fondo
+        Image:
+            source: "img/pst.jpg"   # Ruta relativa al archivo en la carpeta raíz
+            allow_stretch: True       # Estira la imagen para ajustarse
+            keep_ratio: False         # Ignora la relación de aspecto
+            size_hint: 1, 1
+            pos_hint: {"x":0, "y":0}
+
+        # Encima del fondo puedes poner otros widgets
+        Label:
+            text: "LEER"
+            font_size: '60sp'
+            font_name:"ANTQUABI.TTF"
+            color: 0,0,0,1
+            pos_hint: {"center_x":0.5, "center_y":0.95}
+        
+        Label:
+            text: "Me gusta por las noche leer"
+            font_size: '30sp'
+            font_name:"AGENCYB.TTF"
+            color: 0,0,0,1
+            pos_hint: {"center_x":0.5, "center_y":0.80}
+        
+        Label:
+            text: "libros de anatomia cardíaca"
+            font_size: '30sp'
+            font_name:"AGENCYB.TTF"
+            color: 0,0,0,1
+            pos_hint: {"center_x":0.5, "center_y":0.75}
+
+        Label:
+            text: "HMGT"
+            font_size: '25sp'
+            font_name:"BELLI.TTF"
+            color: 0,0,0,1
+            pos_hint: {"center_x":0.75, "center_y":0.2}
+        
+        Button:  # Botón para enviar el nombre
+            text: "Enviar"  # Texto del botón
+            size_hint_y: None  # No ajusta el tamaño vertical automáticamente
+            height: '50dp'  # Altura fija del botón
+            background_color: 1, 0.71, 0.76, 1 # Color de fondo rosa mexicano
+            color: 1, 1, 1, 1  # Color del texto blanco
+            font_size: 20  # Tamaño de fuente
+            on_press: root.enviar()  # Acción al presionar el botón
+        
